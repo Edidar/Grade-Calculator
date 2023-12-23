@@ -37,6 +37,3 @@ for i in range(0,sub):
     print(subName[i], "   \t  " ,latterGrade[i], "   \t    ",gradePoint[i]) 
     print("\n") 
         
-                
-        
-    
