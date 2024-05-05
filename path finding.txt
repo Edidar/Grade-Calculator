@@ -1,0 +1,21 @@
+edge(a,c).
+edge(a,b).
+edge(b,d).
+edge(c,d).
+edge(d,e).
+edge(b,e).
+edge(b,m).
+
+
+connected(X,Y):- edge(X,Y),edge(Y,X).
+
+path(X,Y,Visited):-
+    connected(X,Y),
+    \+ member(Y,Visited).
+
+path(X,Y,Visited):-
+    connected(X,Z),
+    \+ member(Z,Visited),
+    path(Z, Y, [X|Visited]).
+
+has_path(X,Y):- path(X,Y,[]).
